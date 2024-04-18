@@ -7,7 +7,7 @@ CREATE TABLE departments(
 CREATE TABLE dept_emp(
 	emp_no INTEGER NOT NULL,
 	dept_no VARCHAR(30) NOT NULL,
-	PRIMARY KEY (emp_no, dept_no)
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
 
 CREATE TABLE dept_manager(
@@ -45,5 +45,19 @@ SELECT * FROM dept_manager;
 SELECT * FROM employees;
 SELECT * FROM salaries;
 SELECT * FROM titles;
+
+--Creating the first list for the assignment
+SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
+FROM employees e, salaries s 
+WHERE e.emp_no = s.emp_no;
+
+--Second list for assignment
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE to_char(hire_date,'YYYY-MM-DD') LIKE '1986%';
+
+--Third
+SELECT a.dept_no, a.emp_no
+FROM 
 
 
