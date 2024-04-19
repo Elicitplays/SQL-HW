@@ -22,7 +22,7 @@ CREATE TABLE employees(
 	birth_date DATE,
 	first_name VARCHAR(30) NOT NULL,
 	last_name VARCHAR(30) NOT NULL,
-	sex VARCHAR(30),
+	sex VARCHAR(1),
 	hire_date  DATE,
 	PRIMARY KEY (emp_no)
 );
